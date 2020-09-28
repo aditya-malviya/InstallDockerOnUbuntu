@@ -1,0 +1,32 @@
+Step 1: Update your Ubuntu system and  Install Prerequisite Packages for Docker
+
+sudo apt update
+sudo apt upgrade
+sudo apt-get install curl apt-transport-https ca-certificates software-properties-common
+
+Step 2: Add the Docker Repositories
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+apt-cache policy docker-ce
+
+Step 3: Use the apt command to install Docker
+
+sudo apt install docker-ce
+
+Step 4: Start and Automate Docker on startup
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Step 4: Verify
+
+docker --version
+docker -version
+docker -version
+Step 5: Run container
+
+sudo docker container run hello-world
+docker hello-world
+docker hello-world
